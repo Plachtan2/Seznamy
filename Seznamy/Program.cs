@@ -37,7 +37,7 @@
 
             foreach (var student in liststud)
             {
-                Console.WriteLine(student.Jmeno + " - " + student.Body);
+                Console.WriteLine(student.Jmeno + " --- " + student.Body);
             }
 
         }
