@@ -41,7 +41,31 @@
                 Console.WriteLine(student.Popis);
             }
 
+            Console.WriteLine();
+            Console.WriteLine();
+
+            Console.WriteLine("Počet: " + liststud.Count);
+
+            Console.WriteLine("Počet bodů: " + liststud.Sum(VyberBody));
+
+            Console.WriteLine("Počet bodů: " + liststud.Sum(x=>x.Body));
+
+
+            Console.WriteLine("Počet bodů pro studenty s více než 14 bodů: " 
+                + liststud.Where(x => x.Body > 14).Sum(x => x.Body));
+
+            var vybrani = liststud.Where(x => x.Body > 14).ToList();
+
+            vybrani.ForEach(x => Console.WriteLine(x.Popis));
+
         }
+
+        public static int VyberBody(Student student)
+        {
+            return student.Body;
+        }
+
+
     }
 
     public class Student
